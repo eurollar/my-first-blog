@@ -6,26 +6,13 @@
 		<div>
 			<h1><a href="/">Bulba-blog</a></h1>
 		</div>
-
-		<div>
-			<p>published: 11.04.2020, 14:14</p>
-			<h2><a href="">In_da_house-post</a></h2>
-			<p>Ya steklyannaya Galyashka, Ya Kaklyushka-kolotushka!<p>
-		</div>
-
-		<div>
-			<p>published: 11.04.2020, 14:16</p>
-			<h2><a href="">Vyiberi svoego Geka</a></h2>
-			<ol>
-			<li>Glek</li>
-			<li>Shmek</li>
-			<li>Lyaoshka</li>
-			<li>Chyipyirka</li>
-			<li>Chmerka</li>
-			<li>Pypyish anf Pypyishka</li>
-			<li>Maslorick</li>
-			<li>Lyagok</li>
-			</ol>
+{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h1><a href="">{{ post.title }}</a></h1>
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div>
+{% endfor %}
 
 	</body>
 </html>
